@@ -158,6 +158,8 @@
     color: rgb(253, 255, 253);
   }
   
+
+
   .carousel {
     margin-bottom: 100px;
     box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
@@ -179,17 +181,45 @@
   }
   
   .asociate .card6{
-    color:rgb(22, 173, 8)
+    color:rgb(22, 173, 8);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    transition: all 300ms;
+    z-index: 1;
   }
   
   .asociate .card7{
-    color:rgb(197, 43, 4)
+    color:rgb(197, 43, 4);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    transition: all 300ms;
   }
   .asociate .card8{
     color:rgb(4, 65, 197);
     transition: .5s, color .10s;
     -webkit-transition: .5s, color .10s;
     -moz-transition: .5s, color .10s;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    transition: all 300ms;
   }
   
   
@@ -297,3 +327,29 @@
 color: blue;
 
   }
+
+  .dos { 
+    display: flex;
+    position: relative;
+    height: 50vh;
+    width: 100%;
+    background-color: #000000;
+    width: 100%;
+    height: 400px;
+    position: relative;
+    background-image: url(../assets/runing.jpg);
+    background-size: 150%;
+    animation: movimiento 20s infinite linear alternate;  
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    margin-bottom: 60px;
+  }
+  @keyframes movimiento{
+    from{
+        background-position: bottom left;
+    }to{
+        background-position: top right;
+    }
+}

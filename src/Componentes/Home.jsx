@@ -130,11 +130,22 @@ const Home = () => {
           </Carousel.Item>
         </Carousel>
       </Container>
+
+
+
+      <h2 className="text-center mb-5">
+        <img src={pesaImage} alt="Pesa" className="pesa-image" /> Salidas Runing!!!!
+        <img src={pesaImage} alt="Pesa" className="pesa-image" />
+      </h2>
+ <Container className="dos">
+        
+      </Container>
+
+
       <h2 className="text-center mb-4">
         <img src={pesaImage} alt="Pesa" className="pesa-image" /> Asociate ya!!! mira nuestro precios!!!
         <img src={pesaImage} alt="Pesa" className="pesa-image" />
       </h2>
-
 
 
 

@@ -3,12 +3,7 @@ import '../Css/runing.css';
 
 const Runing = () => {
   return (
-    <div className="container-portada">
-
-
-
-
-      
+    <div className="container-portada">    
     </div>
 
 
