@@ -1,9 +1,12 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Table, Button } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const EdicionFormulario = () => {
+  const navigate = useNavigate();
+
   const DATOS = process.env.REACT_APP_DATOS;
 
   console.log(DATOS);
@@ -36,16 +39,34 @@ const EdicionFormulario = () => {
   };
 
   const onDelete = (id) => {
-    console.log('1. Estamos en el onDelete');
+    Swal.fire({
+      icon: 'question',
+      title: '¿Estás seguro?',
+      text: 'Esta acción no se puede deshacer',
+      showCancelButton: true,
+      confirmButtonText: 'Sí',
+      cancelButtonText: 'No',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        console.log('1. Estamos en el onDelete');
 
-    axios.delete(`${DATOS}/${id}`).then(() => {
-      getData();
-      console.log('2. Respondemos Promesa');
+        axios.delete(`${DATOS}/${id}`).then(() => {
+          getData();
+          console.log('2. Respondemos Promesa');
+          Swal.fire({
+            icon: 'success',
+            title: '¡Éxito!',
+            text: 'El registro ha sido eliminado exitosamente.',
+          }).then(() => {
+            navigate('/');
+          });
+        });
+
+        console.log(`La ruta es: ${DATOS}/${id}`);
+        //console.log(`${id} - Eliminado`)
+        console.log('3. Salimos del deletes');
+      }
     });
-
-    console.log(`La ruta es: ${DATOS}/${id}`);
-    //console.log(`${id} - Eliminado`)
-    console.log('3. Salimos del deletes');
   };
 
   console.log(apiData);
