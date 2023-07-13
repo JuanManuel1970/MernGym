@@ -1,9 +1,12 @@
 import { Form, Button } from 'semantic-ui-react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
+import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 const Formulario = () => {
   const URL = process.env.REACT_APP_URL;
+  const navigate = useNavigate();
 
   console.log(URL);
 
@@ -23,8 +26,20 @@ const Formulario = () => {
       await axios.post(URL, datos);
       e.target.reset();
       console.log(URL);
+      Swal.fire({
+        icon: 'success',
+        title: '¡Éxito!',
+        text: 'Los datos han sido enviados exitosamente.',
+      }).then(() => {
+        navigate('/');
+      });
     } catch (error) {
       console.log(error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Hubo un problema al enviar los datos. Inténtalo nuevamente.',
+      });
     }
   };
 
