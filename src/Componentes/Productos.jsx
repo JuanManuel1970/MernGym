@@ -40,7 +40,7 @@ const Productos = () => {
   };
 
   const comprar = () => {
-    // Lógica para realizar la compra (puede ser un llamado a una API, guardar en la base de datos, etc.)
+   
     alert('¡Compra realizada con éxito!');
     setCarrito([]); // Reiniciar el carrito después de realizar la compra
   };
