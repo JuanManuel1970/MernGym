@@ -2,6 +2,7 @@ import { Form, Button } from 'semantic-ui-react';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const Update = () => {
   const navigate = useNavigate();
@@ -35,7 +36,20 @@ const Update = () => {
         password,
       })
       .then(() => {
-        navigate('/');
+        Swal.fire({
+          icon: 'success',
+          title: '¡Éxito!',
+          text: 'Los datos han sido modificados exitosamente.',
+        }).then(() => {
+          navigate('/');
+        });
+      })
+      .catch((error) => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: 'Hubo un problema al modificar los datos. Inténtalo nuevamente.',
+        });
       });
   };
 
