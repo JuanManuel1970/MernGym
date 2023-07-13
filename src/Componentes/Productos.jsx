@@ -47,7 +47,7 @@ const Productos = () => {
 
   return (
     <div>
-      <h1 className="text-center mb-5"><img src={pesaImage} alt="Pesa" className="pesa-image" />Productos que recomendamos...<img src={pesaImage} alt="Pesa" className="pesa-image" /></h1>
+      <h1 className="text-center mb-5"><img src={pesaImage} alt="Pesa" className="pesa-image" />  Productos que recomendamos...  <img src={pesaImage} alt="Pesa" className="pesa-image" /></h1>
 
       <div className="row">
         {productos.map((producto) => (

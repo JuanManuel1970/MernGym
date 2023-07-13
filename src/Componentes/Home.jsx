@@ -1,6 +1,6 @@
 import React from 'react';
 import { Carousel, Card, Container, Row, Col } from 'react-bootstrap';
-import '../Css/Home.css';
+import '../Css/home.css';
 import pesaImage from '../assets/1.png';
 import pesa1Image from '../assets/2.png';
 
