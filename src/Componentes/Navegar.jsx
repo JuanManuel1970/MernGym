@@ -1,44 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
 import pesa2Image from '../assets/3.png';
 import { Link } from 'react-router-dom';
+import { Navbar, Nav } from 'react-bootstrap';
 
 function Navegar() {
-    return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark justify-content-center">
-        <div className="container">
-          <Link className="navbar-brand" to="/"><img src={pesa2Image} alt="Pesa" className="pesa2-image" />MernGYM</Link>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul className="navbar-nav">
-              <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/">Home</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/Productos">Productos</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/Runing">Runing</Link>
-              </li>
-              
-              <li className="nav-item">
-                <Link className="nav-link" to="/Formulario">Formulario</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/EdicionFormulario">Edicion Formulario</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/Faq">Faq</Link>
-              </li>
-              
-            
-            </ul>
-          </div>
-        </div>
-      </nav>
-    );
+  const [expanded, setExpanded] = useState(false);
+
+  const toggleNavbar = () => {
+    setExpanded(!expanded);
+  };
+
+  return (
+    <Navbar bg="dark" variant="dark" expand="lg" expanded={expanded}>
+      <div className="container">
+        <Navbar.Brand as={Link} to="/" onClick={() => setExpanded(false)}>
+          <img src={pesa2Image} alt="Pesa" className="pesa2-image" />
+          MernGYM
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbarNavDropdown" onClick={toggleNavbar} />
+        <Navbar.Collapse id="navbarNavDropdown">
+          <Nav className="mr-auto">
+            <Nav.Link as={Link} to="/" onClick={() => setExpanded(false)}>
+              Home
+            </Nav.Link>
+            <Nav.Link as={Link} to="/Productos" onClick={() => setExpanded(false)}>
+              Productos
+            </Nav.Link>
+            <Nav.Link as={Link} to="/Runing" onClick={() => setExpanded(false)}>
+              Runing
+            </Nav.Link>
+            <Nav.Link as={Link} to="/Formulario" onClick={() => setExpanded(false)}>
+              Formulario
+            </Nav.Link>
+            <Nav.Link as={Link} to="/EdicionFormulario" onClick={() => setExpanded(false)}>
+              Edicion Formulario
+            </Nav.Link>
+            <Nav.Link as={Link} to="/Faq" onClick={() => setExpanded(false)}>
+              Faq
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </div>
+    </Navbar>
+  );
 }
 
 export default Navegar;
-
