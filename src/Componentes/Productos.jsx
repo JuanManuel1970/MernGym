@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import pesaImage from '../assets/pesa.jpg';
+import Swal from 'sweetalert2';
 
 const Productos = () => {
   const [productos, ] = useState([
@@ -40,10 +43,24 @@ const Productos = () => {
   };
 
   const comprar = () => {
-   
-    alert('¡Compra realizada con éxito!');
-    setCarrito([]); // Reiniciar el carrito después de realizar la compra
+    Swal.fire({
+      title: 'Confirmar compra',
+      text: '¿Estás seguro de realizar la compra?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Sí, comprar',
+      cancelButtonText: 'Cancelar',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        setCarrito([]); // Reiniciar el carrito después de realizar la compra
+        Swal.fire('¡Compra realizada con éxito!', '', 'success');
+      }
+    });
   };
+
+  const totalProductos = carrito.reduce((total, producto) => total + producto.cantidad, 0);
+
+  const totalPrecio = carrito.reduce((total, producto) => total + (producto.precio * producto.cantidad), 0);
 
   return (
     <div>
@@ -73,7 +90,7 @@ const Productos = () => {
         ))}
       </div>
 
-      <h2>Carrito de compras</h2>
+      <h2 className="text-primary"><FontAwesomeIcon icon={faShoppingCart} /> Carrito de compras</h2>
       {carrito.length === 0 ? (
         <p>No hay productos en el carrito.</p>
       ) : (
@@ -102,6 +119,9 @@ const Productos = () => {
               </li>
             ))}
           </ul>
+
+          <p>Total de productos: {totalProductos}</p>
+          <p>Total a pagar: ${totalPrecio}</p>
 
           <button className="btn btn-success mt-3" onClick={comprar}>
             Comprar
