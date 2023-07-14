@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import '../Css/faq.css';
 import pesaImage from '../assets/1.png';
+import { Container } from 'react-bootstrap';
+
 
 const Faq = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -17,6 +19,7 @@ const Faq = () => {
     <div className="faq">
       
       <h2 className="text-center mb-5"><img src={pesaImage} alt="Pesa" className="pesa-image" />Preguntas frecuentes<img src={pesaImage} alt="Pesa" className="pesa-image" /></h2>
+     <Container className="fondofaq">
       <ol>
         <li>
           <h3 onClick={() => toggleAnswer(0)}>¿Cuál es el horario de atención?</h3>
@@ -79,6 +82,7 @@ const Faq = () => {
           <p className={activeIndex === 14 ? 'show' : ''}>Sí, contamos con un chat en vivo en nuestro sitio web donde puedes contactarnos en tiempo real.</p>
         </li>
       </ol>
+      </Container>
     </div>
   );
 }

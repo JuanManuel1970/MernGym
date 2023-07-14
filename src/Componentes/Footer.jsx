@@ -22,13 +22,13 @@ const Footer = () => {
            
             <h5>Estas son nuestras redes Sociales  :</h5>
             <div className="social-icons">
-              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.instagram.com/utnba.ok/"  target="_blank" rel="noopener noreferrer">
                 <FontAwesomeIcon icon={faInstagram} />
               </a>
-              <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+              <a href="https://web.facebook.com/UniversidadTecnologicaNacional/?locale=es_LA&_rdc=1&_rdr"  target="_blank" rel="noopener noreferrer">
                 <FontAwesomeIcon icon={faFacebook} />
               </a>
-              <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://twitter.com/i/flow/login?redirect_after_login=%2Futn" target="_blank" rel="noopener noreferrer">
                 <FontAwesomeIcon icon={faTwitter} />
               </a>
               <a href="https://api.whatsapp.com/send?phone=+123456789" target="_blank" rel="noopener noreferrer">
