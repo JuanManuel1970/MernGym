@@ -104,7 +104,7 @@ const Home = () => {
       </Container>
 
       <h2 className="text-center mb-4">
-        <img src={pesaImage} alt="Pesa" className="pesa-image" /> Mira algunnos de nustros clientes en accion
+        <img src={pesaImage} alt="Pesa" className="pesa-image" /> Algunos de nuestros clientes en accion
         <img src={pesaImage} alt="Pesa" className="pesa-image" />
       </h2>
 

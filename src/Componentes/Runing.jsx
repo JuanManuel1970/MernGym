@@ -82,27 +82,24 @@ const Running = () => {
         <img src={pesaImage} alt="Pesa" className="pesa-image" /> Antes de salir chequeea el clima!!!
         <img src={pesaImage} alt="Pesa" className="pesa-image" />
       </h2>
-      <h3> Para hoy se espera :</h3>
-      <Container className="yo2">
-       
-        {isLoading ? (
-          <p>Cargando datos...</p>
-        ) : (
-          <div>
-            <h3>{weatherData?.name}, {weatherData?.sys?.country}</h3>
-            <p>{dateBuilder(new Date())}</p>
-            <div className="container-img">
-             
-            </div>
-            <div className="container-temp">
-              <div>{Math.round(weatherData?.main?.temp)}</div>
-              <span>°C</span>
-            </div>
-            <p>{weatherData ? capitalizeFirstLetter(weatherData.weather[0].description) : ""}</p>
-            <p>{Math.round(weatherData?.main?.temp_min)}°C / {Math.round(weatherData?.main?.temp_max)}°C</p>
-          </div>
-        )}
-        </Container>
+      <h3>Para hoy se espera:</h3>
+<Container className="yo2">
+  {isLoading ? (
+    <p>Cargando datos...</p>
+  ) : (
+    <div>
+      <h3>{weatherData?.name}, {weatherData?.sys?.country}</h3>
+      <p>{dateBuilder(new Date())}</p>
+      <div className="container-img"></div>
+      <div className="container-temp">
+        <div>{Math.round(weatherData?.main?.temp)}</div>
+        <span>°C</span>
+      </div>
+      <p>{weatherData ? capitalizeFirstLetter(weatherData.weather[0].description) : ""}</p>
+      <p>{Math.round(weatherData?.main?.temp_min)}°C / {Math.round(weatherData?.main?.temp_max)}°C</p>
+    </div>
+  )}
+</Container>
       </Container>
     </Container>
   );
